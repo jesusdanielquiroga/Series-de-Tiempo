@@ -64,8 +64,64 @@ A continuación vamos a ver como podemos manipular y analizar series de tiempo c
 
 Puede necesitar installar la siguiente dependencia:
 ```sh
-!pip install --upgrade pandas_datareader
+!pip install --upgrade pandas
+!pip install --upgrade pandas-datareader
+!pip install yfinance
+!pip install fix_yahoo_finance
 ```
+* Primero se importan las librerías y recursos necesarios
+```sh
+#Importar modulos requeridos
+import pandas_datareader as data
+import pandas as pd
+import numpy as np
+#Importar librerias de visualización
+import matplotlib.pyplot as plt
+import seaborn as sns
+```
+* Cargamos los datos de la serie de tiempo
+```sh
+# Ejemplo serie de tiempo con Pandas
+# Creando una serie de tiempo de los precios de dollar
+ts = data.DataReader("USDCOP=X",
+                     start='2017-1-1',
+                     end='2022-11-3',
+                     data_source='yahoo')['Adj Close']
+```
+* Visualizamos la serie de tiempo
+```sh
+ts.head()
+```
+```sh
+Date
+2017-01-02    2957.100098
+2017-01-03    2950.699951
+2017-01-04    2916.199951
+2017-01-05    2891.100098
+2017-01-06    2897.899902
+Name: Adj Close, dtype: float64
+```
+Tambien podemos filtrar un periodo especifico. Puedes ver más filtros(<a href="manipulando_series_tiempo.ipynb">ver codigo</a>)
+```sh
+# filtrando sólo del 2022-01-01 al 2022-11-04
+ts['2022-01-01':'2022-11-04']
+```
+```sh
+Date
+2022-01-03    4063.580078
+2022-01-04    4063.080078
+2022-01-05    4078.550049
+2022-01-06    4026.919922
+2022-01-07    4030.919922
+                 ...     
+2022-10-31    4833.259766
+2022-11-01    4937.000000
+2022-11-02    5002.250000
+2022-11-03    5001.279785
+2022-11-04    5067.109863
+Name: Adj Close, Length: 220, dtype: float64
+```
+
 ## White Noise
 
 ## Randon Walk
@@ -73,8 +129,7 @@ Puede necesitar installar la siguiente dependencia:
 ## Modelo ARIMA
 
 ```sh
-cd game
-python3 main.p
+ts.head()
 ```
 ## Tecnologías utilizadas
 
