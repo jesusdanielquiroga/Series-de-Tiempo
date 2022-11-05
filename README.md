@@ -6,6 +6,8 @@
    <img src="https://img.shields.io/github/license/jesusdanielquiroga/model-api">
    <img src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fjdquiroga2410">
    <img src="https://img.shields.io/github/stars/camilafernanda?style=social">
+   <img src="https://img.shields.io/badge/topic-seriesdetiempo-orange">
+
   </p>
 
  <h1 align="left"> Series de Tiempo </h1>
@@ -23,6 +25,8 @@
 * [Características](#características)
 
 * [Manipulando una serie de tiempo](#manipulando-una-serie-de-tiempo)
+
+* [Ventana Móvil](#ventana-móvil)
 
 * [White Noise](#white-noise)
 
@@ -121,6 +125,85 @@ Date
 2022-11-04    5067.109863
 Name: Adj Close, Length: 220, dtype: float64
 ```
+## Ventana Móvil
+Una operación común en los datos de <a href="https://es.wikipedia.org/wiki/Serie_temporal">series de tiempo</a> es desplazar los valores hacia atrás y adelante en el tiempo, como por ejemplo para calcular el cambio porcentual de una muestra a otra. En Pandas podemos utilizar los métodos Series.rolling() y Series.shift().
+
+**Series.rolling()**
+
+* Realizamos una revisón de la serie de tiempo:
+```sh
+ts.head(10)
+
+Date
+2017-01-02    2957.100098
+2017-01-03    2950.699951
+2017-01-04    2916.199951
+2017-01-05    2891.100098
+2017-01-06    2897.899902
+2017-01-09    2865.699951
+2017-01-10    2887.399902
+2017-01-11    2888.800049
+2017-01-12    2931.399902
+2017-01-13    2877.899902
+Name: Adj Close, dtype: float64
+```
+
+* Establecemos una ventana de 5, y vamos calculando el promedio de cada ventana a medida que se va desplazando:
+```sh
+#Utilizando Series.rolling()
+media_movil = ts.rolling(window=5).mean()
+media_movil.head(10)
+
+Date
+2017-01-02            NaN
+2017-01-03            NaN
+2017-01-04            NaN
+2017-01-05            NaN
+2017-01-06    2922.600000
+2017-01-09    2904.319971
+2017-01-10    2891.659961
+2017-01-11    2886.179980
+2017-01-12    2894.239941
+2017-01-13    2890.239941
+Name: Adj Close, dtype: float64
+```
+* Como podemos ver se calcula el promedio de los primeros 5 datos (en el dia 2017-01-06) y así sucesivamente:
+```sh
+ts['2017-01-02': '2017-01-06'].mean()
+
+2922.6
+```
+**Series.shift()**
+
+* Observamos como se desplaza los datos 1 posición o 1 día (podemos utilizarlo como un modelo de persistencia)
+```sh
+media_movil_sh= ts.shift(1)
+media_movil_sh.head()
+
+Date
+2017-01-02            NaN
+2017-01-03    2957.100098
+2017-01-04    2950.699951
+2017-01-05    2916.199951
+2017-01-06    2891.100098
+Name: Adj Close, dtype: float64
+```
+* Calculando el porcentaje de variación del día:
+```sh
+variacion_diaria = ts/ ts.shift(1) - 1
+ts['var_diaria'] = variacion_diaria
+ts['var_diaria'].head()
+
+Date
+2017-01-02 00:00:00         NaN
+2017-01-03 00:00:00   -0.002164
+2017-01-04 00:00:00   -0.011692
+2017-01-05 00:00:00   -0.008607
+2017-01-06 00:00:00    0.002352
+Name: Adj Close, dtype: object
+```
+
+
 
 ## White Noise
 
