@@ -247,7 +247,24 @@ ts["2022"][(ts["2022"] > banda_sup["2022"]).to_numpy()]
 ```
 ## White Noise
 
+Un <a href="https://support.numxl.com/hc/es/articles/115001099806--C%C3%B3mo-comprobar-cu%C3%A1ndo-una-serie-de-tiempo-dada-es-s%C3%B3lo-ruido-blanco-">white noise</a> es un caso simple de los procesos estocásticos, donde los valores son independientes e idénticamente distribuidos a lo largo del tiempo con media cero, igual varianza (varianza constante) y no es <a href="https://todoeconometria.com/autocorrelacion-dw/">autocorrelacionada</a> , se denota por $\varepsilon_t$.
+
+Si todas las series que observamos en la realidad fuesen <a href="https://ecab-estadistica.medium.com/ruido-blanco-white-noise-en-python-y-en-r-dbd87d4cd1fe">Ruido Blanco </a> serían impredecibles y no habría ningún modelo que proponer. Se trata de un proceso en el que todas sus variables son independientes.
+
+```sh
+import numpy as np
+import matplotlib.pyplot as plt
+
+y = np.random.normal(0, 3, 100)
+
+plt.plot(y)
+```
+![whiteboise](https://user-images.githubusercontent.com/87950040/200144594-72479835-9a28-4d11-b661-cc1e23219150.png)
+
 ## Randon Walk
+
+El randon walk o camino al azar es un proceso estocástico $X_t$, donde la primera diferencia de este proceso estocástico es un <a href="https://support.numxl.com/hc/es/articles/115001099806--C%C3%B3mo-comprobar-cu%C3%A1ndo-una-serie-de-tiempo-dada-es-s%C3%B3lo-ruido-blanco-">white noise</a>, esto es $\triangledown X_t = \varepsilon_t$ .
+
 
 ## Modelo ARIMA
 
