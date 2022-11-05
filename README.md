@@ -38,6 +38,7 @@
 
 * [Datasets](#datasets)
 
+* [Ejercicios](#ejercicios)
 ## Descripción del proyecto
 
 Repositorio creado con el objetivo de identificar, describir y analizar <a href="https://es.wikipedia.org/wiki/Serie_temporal">series de tiempo</a> o series temporal profundizando en los conceptos básicos, en la aplicación en modelos de Machine Learning y en el uso del lenguaje de programación Python. 
@@ -127,6 +128,8 @@ Name: Adj Close, Length: 220, dtype: float64
 ```
 ## Ventana Móvil
 Una operación común en los datos de <a href="https://es.wikipedia.org/wiki/Serie_temporal">series de tiempo</a> es desplazar los valores hacia atrás y adelante en el tiempo, como por ejemplo para calcular el cambio porcentual de una muestra a otra. En Pandas podemos utilizar los métodos Series.rolling() y Series.shift().
+
+<a href="ventana_móvil.ipynb">Ver código</a>
 
 **Series.rolling()**
 
@@ -226,5 +229,20 @@ ts.head()
 
 <a href="https://raw.githubusercontent.com/jesusdanielquiroga/Series-de-Tiempo/main/Amtrak.csv"> Dataset 2: Ridership </a>
 
+## Ejercicios
 
+**1.** Realizar un análisis del comportamiento anual del dólar desde enero de 2017 a la fecha.
+
+* ¿Cuál es el año que tuvo mayor incremento?
+* ¿Cuál es el año con mayor volatilidad? (Usar Boxplot)
+
+**2.** Para la serie de amtrack y sp500(últimos 5 años)(símbolo: SPY).
+
+* Dividir en train y test
+* Revisar autocorrelaciones
+* Determinar si la serie es ruido blanco
+* determinar si la serie es random walk
+* Descomponerla en trend, seasonality y residuos(usando la biblioteca)
+* Determinar si la serie es estacionaria
+* Si no lo es, intentar hacerla estacionaria con el método de diferencias
 
