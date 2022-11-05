@@ -283,6 +283,8 @@ ts.head()
 
 <a href="https://raw.githubusercontent.com/jesusdanielquiroga/Series-de-Tiempo/main/Amtrak.csv"> Dataset 2: Ridership </a>
 
+<a href="https://raw.githubusercontent.com/ecabestadistica/curso-series-temporales/master/2.%20Serie%20temporal%20en%20R%20y%20Python/Python/Index2018.csv"> Dataset 3: Precios del mercado financiero, en específico, del SP500 </a>
+
 ## Ejercicios
 
 **1.** Realizar un análisis del comportamiento anual del dólar desde enero de 2017 a la fecha.
