@@ -34,6 +34,10 @@
 
 * [Randon Walk](#randon-walk)
 
+* [Series de tiempo estacionarias](#Series-de-tiempo-estacionarias)
+
+* [Autocorrelaciones](#autocorrelaciones)
+
 * [Modelo ARIMA](#modelo-arima)
 
 * [Tecnologías utilizadas](#tecnologías-utilizadas)
@@ -309,6 +313,10 @@ plt.show()
 ## Randon Walk
 
 El randon walk o camino al azar es un proceso estocástico $X_t$, donde la primera diferencia de este proceso estocástico es un <a href="https://support.numxl.com/hc/es/articles/115001099806--C%C3%B3mo-comprobar-cu%C3%A1ndo-una-serie-de-tiempo-dada-es-s%C3%B3lo-ruido-blanco-">white noise</a>, esto es $\triangledown X_t = \varepsilon_t$ .
+
+## Series de tiempo estacionarias
+
+## Autocorrelaciones
 
 
 ## Modelo ARIMA
