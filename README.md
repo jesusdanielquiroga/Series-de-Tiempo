@@ -60,6 +60,12 @@ Revisa un <a href="series_de_tiempo.ipynb">primer ejemplo </a> de series de tiem
 
 ## Manipulando una serie de tiempo
 
+A continuación vamos a ver como podemos manipular y analizar series de tiempo con la ayuda de Python y otras [tecnologías](#tecnologías-utilizadas). En este caso, vamos a trabajar con la información de los precios del dolar(USDCOP=X) de los últimos años.
+
+Puede necesitar installar la siguiente dependencia:
+```sh
+!pip install --upgrade pandas_datareader
+```
 ## White Noise
 
 ## Randon Walk
