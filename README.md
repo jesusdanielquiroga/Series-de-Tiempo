@@ -28,6 +28,8 @@
 
 * [Ventana Móvil](#ventana-móvil)
 
+* [Bandas de Bollinger](#bandas-de-bollinger)
+
 * [White Noise](#white-noise)
 
 * [Randon Walk](#randon-walk)
@@ -206,8 +208,43 @@ Date
 Name: Adj Close, dtype: object
 ```
 
+## Bandas de Bollinger
 
+Las <a href="https://admiralmarkets.com/es/education/articles/forex-strategy/bandas-de-bollinger">bandas de Bollinger</a> son un indicador de inversión tendencial de tipo técnico, que se utiliza para predecir la evolución futura del precio de un instrumento financiero.
 
+Está compuesto por tres bandas (superior, media e inferior) y permiten ver de forma dinámica cómo varía una serie de datos o precios en relación a la banda media. La distancia hacia arriba y hacia abajo respecto a los precios depende de la volatilidad de éstos.
+
+En esta ocasión vamos a aplicar las ventanas móviles para determinar las <a href="https://admiralmarkets.com/es/education/articles/forex-strategy/bandas-de-bollinger">bandas de Bollinger</a> del comportamiento del precio del dollar.
+
+* Calculamos el promedio movil del precio del dollar en ventanas de 20 días:
+```sh
+media_movil = ts.rolling(window=20).mean()
+```
+* Calculamos la desviación standar movil de los datos:
+```sh
+std_movil = ts.rolling(window=20).std()
+```
+* Calculamos la banda superior:
+```sh
+banda_sup = media_movil + 2 * std_movil
+```
+* Calculamos la banda inferior:
+```sh
+banda_inf = media_movil - 2 * std_movil
+```
+* Visualizamos los datos:
+```sh
+ts["2022"].plot()
+banda_sup["2022"].plot()
+banda_inf["2022"].plot()
+plt.show()
+```
+![bandas](https://user-images.githubusercontent.com/87950040/200143003-a15951ff-09bc-404a-85e8-7d8e2e772ceb.png)
+
+* Para conocer con exactitud cuando el precio del dolar sobrepaso la banda superior:
+```sh
+ts["2022"][(ts["2022"] > banda_sup["2022"]).to_numpy()]
+```
 ## White Noise
 
 ## Randon Walk
