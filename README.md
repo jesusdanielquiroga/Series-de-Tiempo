@@ -214,7 +214,7 @@ Las <a href="https://admiralmarkets.com/es/education/articles/forex-strategy/ban
 
 Está compuesto por tres bandas (superior, media e inferior) y permiten ver de forma dinámica cómo varía una serie de datos o precios en relación a la banda media. La distancia hacia arriba y hacia abajo respecto a los precios depende de la volatilidad de éstos.
 
-En esta ocasión vamos a aplicar las ventanas móviles para determinar las <a href="https://admiralmarkets.com/es/education/articles/forex-strategy/bandas-de-bollinger">bandas de Bollinger</a> del comportamiento del precio del dollar.
+En esta ocasión vamos a aplicar las ventanas móviles para determinar las <a href="https://admiralmarkets.com/es/education/articles/forex-strategy/bandas-de-bollinger">bandas de Bollinger</a> del comportamiento del <a href="bandas_bollinger.ipynb">precio del dollar</a>.
 
 * Calculamos el promedio movil del precio del dollar en ventanas de 20 días:
 ```sh
