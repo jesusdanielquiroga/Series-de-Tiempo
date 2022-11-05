@@ -20,19 +20,19 @@
 
 * [¿Qué son las series de tiempo?](#series-de-tiempo)
 
-* [Características](#Características)
+* [Características](#características)
 
-* [Características de la aplicación y demostración](#Características-de-la-aplicación-y-demostración)
+* [Manipulando una serie de tiempo](#manipulando-una-serie-de-tiempo)
+
+* [White Noise](#white-noise)
+
+* [Randon Walk](#randon-walk)
+
+* [Modelo ARIMA](#modelo-arima)
 
 * [Tecnologías utilizadas](#tecnologías-utilizadas)
 
-* [Personas Contribuyentes](#personas-contribuyentes)
-
-* [Personas-Desarrolladores del Proyecto](#personas-desarrolladores)
-
 * [Datasets](#datasets)
-
-* [Conclusión](#conclusión)
 
 ## Descripción del proyecto
 
@@ -58,13 +58,29 @@ La <a href="https://es.wikipedia.org/wiki/Serie_temporal">series de tiempo</a> s
 
 Revisa un <a href="series_de_tiempo.ipynb">primer ejemplo </a> de series de tiempo utilizando Python y el [Dataset](#datasets) #1
 
+## Manipulando una serie de tiempo
+
+## White Noise
+
+## Randon Walk
+
+## Modelo ARIMA
+
 ```sh
 cd game
 python3 main.p
 ```
+## Tecnologías utilizadas
+
+* **Python**
+* **Statsmodels**
+* **Pandas**
 
 ## Datasets
 
 <a href="https://raw.githubusercontent.com/jesusdanielquiroga/Series-de-Tiempo/main/airline-passengers.csv"> Dataset 1: Passengers </a>
+
+<a href="https://raw.githubusercontent.com/jesusdanielquiroga/Series-de-Tiempo/main/Amtrak.csv"> Dataset 2: Ridership </a>
+
 
 
