@@ -261,6 +261,51 @@ plt.plot(y)
 ```
 ![whiteboise](https://user-images.githubusercontent.com/87950040/200144594-72479835-9a28-4d11-b661-cc1e23219150.png)
 
+Vamos a ver un ejemplo en Python de cómo generar white noise comparandola con una serie de precios del mercado financiero:
+
+* Primero importamos los recursos y módulos necesarios.
+```sh
+#Importar modulos requeridos
+import pandas_datareader as data
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error
+from math import sqrt
+#Importar librerias de visualización
+import matplotlib.pyplot as plt
+import seaborn as sns
+#Importamos los datos
+df = pd.read_csv('https://raw.githubusercontent.com/ecabestadistica/curso-series-temporales/master/2.%20Serie%20temporal%20en%20R%20y%20Python/Python/Index2018.csv')
+```
+* Convertimos la variable fecha al tipo correspondiente, le asignamos una frecuencia de “business days” y rellenamos cualquier valor faltante.
+```sh
+df.date = pd.to_datetime(df.date, dayfirst = True)
+df.set_index('date', inplace=True)
+df=df.asfreq('b')
+df=df.fillna(method='ffill')
+```
+* Generamos los datos de white noise, usando la misma media y varianza que los datos de SP500 que contiene el dataset.
+```sh
+wn = np.random.normal(loc = df.spx.mean(), scale = df.spx.std(), size = len(df))
+df['wn'] = wn
+```
+* Visualizamos la serie de tiempo con white noise generada
+```sh
+df.wn.plot(figsize = (20,5))
+plt.title('White Noise Time-Series', size= 24)
+plt.show()
+```
+![whitenoise](https://user-images.githubusercontent.com/87950040/200146683-2d36d838-a21e-4dae-9719-5cf3e205bec4.png)
+
+* Visualizamos la serie de tiempo  del SP500 que si tiene patrones.
+```sh
+df.spx.plot(figsize=(20,5))
+plt.title('S&P Prices', size = 24)
+plt.show()
+```
+![S P_Prices](https://user-images.githubusercontent.com/87950040/200146802-24baeb93-5e5c-49e0-a286-11b9752e787e.png)
+
 ## Randon Walk
 
 El randon walk o camino al azar es un proceso estocástico $X_t$, donde la primera diferencia de este proceso estocástico es un <a href="https://support.numxl.com/hc/es/articles/115001099806--C%C3%B3mo-comprobar-cu%C3%A1ndo-una-serie-de-tiempo-dada-es-s%C3%B3lo-ruido-blanco-">white noise</a>, esto es $\triangledown X_t = \varepsilon_t$ .
