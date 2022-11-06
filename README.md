@@ -334,6 +334,47 @@ A veces también se lo denomina «correlación en serie» o «correlación rezag
 Cuando la autocorrelación en una serie de tiempo es alta, resulta fácil predecir valores futuros simplemente haciendo referencia a valores pasados.
 
 <a href="Autocorrelaciones.ipynb">ver cógido</a>
+
+**Autocorrelación vs Correlación**
+
+La metrica de correlación permite comparar dos series de tiempo, y la autocorrelación permite explorar la relación de una serie de tiempo con una ventana de tiempo pasada.
+
+```sh
+#correlación
+dash['High'].corr(bitcoin.loc[292:1759,'High'])
+
+0.739585614978243
+```
+```sh
+#autocorrelación
+bitcoin['High'].autocorr(lag=1)
+
+0.9977857086596763
+```
+**Representación gráfica para el análisis de autocorrelación de series de tiempo**
+
+**Pandas**
+```sh
+#Importamos el modulo de Pandas para autocorrelación
+from pandas.plotting import autocorrelation_plot
+
+#Graficamos la autocorrelación de la serie
+autocorrelation_plot(train)
+```
+![pandas (1)](https://user-images.githubusercontent.com/87950040/200187710-6b237f57-9761-488d-bc4b-60049f2057ed.png)
+
+**Statsmodels**
+```sh
+#Importamos el modulo de statsmodels para autocorrelación
+from statsmodels.graphics.tsaplots import plot_acf
+
+#Graficamos la autocorrelación de la serie
+fig = plot_acf(train, lags=20, alpha=0.05)
+```
+![stats (1)](https://user-images.githubusercontent.com/87950040/200188260-dcd55c42-be54-49d2-a0ec-f2f858aec2ca.png)
+
+
+
 ## Modelo ARIMA
 
 ```sh
