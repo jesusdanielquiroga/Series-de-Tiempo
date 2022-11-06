@@ -212,6 +212,7 @@ Date
 2017-01-06 00:00:00    0.002352
 Name: Adj Close, dtype: object
 ```
+**Nota:** Pandas también nos ofrece una serie de funciones para calcular estadísticas móviles, en ellas la función estadística se calcula sobre una ventana de datos representados por un determinado período de tiempo y luego se desplaza la ventana de datos por un intervalo especificado, calculando continuamente la estadística, siempre y cuando la ventana este dentro de las fechas de la serie de tiempo. El ejemplo más utilizado es el de media móvil, que se usa comúnmente en el análisis de series de tiempo financieras para suavizar las fluctuaciones a corto plazo y poner de relieve las tendencias a largo plazo en los datos.
 
 ## Bandas de Bollinger
 
