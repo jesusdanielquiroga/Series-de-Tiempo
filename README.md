@@ -1,3 +1,5 @@
+ 
+
  <p align="left">
    <img src="https://img.shields.io/badge/status-en%20desarrollo-green"> 
    <img src="https://img.shields.io/github/issues/jesusdanielquiroga/model-api">
@@ -7,7 +9,6 @@
    <img src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fjdquiroga2410">
    <img src="https://img.shields.io/github/stars/camilafernanda?style=social">
    <img src="https://img.shields.io/badge/topic-seriesdetiempo-orange">
-
   </p>
 
  <h1 align="left"> Series de Tiempo </h1>
@@ -315,6 +316,13 @@ plt.show()
 El randon walk o camino al azar es un proceso estocástico $X_t$, donde la primera diferencia de este proceso estocástico es un <a href="https://support.numxl.com/hc/es/articles/115001099806--C%C3%B3mo-comprobar-cu%C3%A1ndo-una-serie-de-tiempo-dada-es-s%C3%B3lo-ruido-blanco-">white noise</a>, esto es $\triangledown X_t = \varepsilon_t$ .
 
 ## Series de tiempo estacionarias
+Una series de tiempo se dice que es estrictamente estacionaria si sus propiedades no son afectadas por los cambios a lo largo del tiempo. Es decir, que se deberían cumplir tres criterios básicos para poder considerar a una series de tiempo como estacionaria:
+
+* La media es constante: La media de la serie no debe ser una función de tiempo.
+* Varianza constante: La varianza no esta afectada por el tiempo.
+* No tiene seasonality.
+
+La razón por la que estas series son importantes es que la mayoría de los modelos de series de tiempo funcionan bajo el supuesto de que la serie es estacionaria. Intuitivamente, podemos suponer que si una serie tiene un comportamiento particular en el tiempo, hay una probabilidad muy alta de que se comportamiento continúe en el futuro. Además, las teorías relacionadas con las series estacionarias son más maduras y más fáciles de implementar en comparación con series no estacionarias. A pesar de que el supuesto de que la serie es estacionaria se utiliza en muchos modelos, casi ninguna de las series de tiempo que encontramos en la práctica son estacionarias. Por tal motivo la estadística tuvo que desarrollar varias técnicas para hacer estacionaria, o lo más cercano posible a estacionaria, a una serie.
 
 ## Autocorrelaciones
 
@@ -355,3 +363,4 @@ ts.head()
 * Determinar si la serie es estacionaria
 * Si no lo es, intentar hacerla estacionaria con el método de diferencias
 
+<a href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=jesus-daniel-quiroga-saldaña-b5494436" target="_blank">Follow on LinkedIn</a>
