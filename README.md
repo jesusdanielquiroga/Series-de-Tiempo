@@ -327,7 +327,13 @@ La razón por la que estas series son importantes es que la mayoría de los mode
 
 ## Autocorrelaciones
 
+La autocorrelación mide el grado de similitud entre una serie de tiempo y una versión retrasada de sí misma en intervalos de tiempo sucesivos.
 
+A veces también se lo denomina «correlación en serie» o «correlación rezagada», ya que mide la relación entre los valores actuales de una variable y sus valores históricos.
+
+Cuando la autocorrelación en una serie de tiempo es alta, resulta fácil predecir valores futuros simplemente haciendo referencia a valores pasados.
+
+<a href="Autocorrelaciones.ipynb">ver cógido</a>
 ## Modelo ARIMA
 
 ```sh
