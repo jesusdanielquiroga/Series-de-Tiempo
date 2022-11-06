@@ -419,7 +419,7 @@ plt.plot(decompose.resid)
 ## Modelo ARIMA
 
 ```sh
-ts.head()
+En proceso de investigación
 ```
 ## Tecnologías utilizadas
 
