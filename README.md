@@ -39,6 +39,8 @@
 
 * [Autocorrelaciones](#autocorrelaciones)
 
+* [Descomposición](#descomposición)
+
 * [Modelo ARIMA](#modelo-arima)
 
 * [Tecnologías utilizadas](#tecnologías-utilizadas)
@@ -373,7 +375,32 @@ fig = plot_acf(train, lags=20, alpha=0.05)
 ```
 ![stats (1)](https://user-images.githubusercontent.com/87950040/200188260-dcd55c42-be54-49d2-a0ec-f2f858aec2ca.png)
 
+## Descomposición
 
+Esta es una técnica que trata de descomponer una serie de tiempo en su tendencia, su estacionalidad y sus factores residuales. Statsmodels viene con una función de descomposición:
+
+```sh
+#Importamos el modulo de statsmodels
+from statsmodels.tsa.seasonal import seasonal_decompose
+
+# Ejemplo de descomposición de serie de tiempo
+decompose = seasonal_decompose(train)
+
+#Graficamos...
+decompose.plot()
+plt.show()
+```
+![descompe](https://user-images.githubusercontent.com/87950040/200188797-7158d45e-f2bd-4975-96c4-bca2b4919638.png)
+```sh
+#Graficamos la estacionalidad
+plt.plot(decompose.seasonal)
+
+#Graficamos el residuo
+plt.plot(decompose.resid)
+```
+![estacional](https://user-images.githubusercontent.com/87950040/200188973-ae50adfe-5761-4b67-a3da-5bc0386d8b2f.png)
+
+![residuo](https://user-images.githubusercontent.com/87950040/200188986-2493ffda-6843-42aa-8e4b-f4ea0c68b02b.png)
 
 ## Modelo ARIMA
 
