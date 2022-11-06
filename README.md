@@ -314,6 +314,20 @@ plt.show()
 ```
 ![S P_Prices](https://user-images.githubusercontent.com/87950040/200146802-24baeb93-5e5c-49e0-a286-11b9752e787e.png)
 
+**¿Por qué eso importa?**
+
+Es importante por dos razones principales:
+
+**1. Previsibilidad**: si su serie temporal es ruido blanco, entonces, por definición, es aleatoria. No se puede modelar razonablemente y hacer predicciones.
+
+**2. Diagnóstico del modelo**: la serie de errores de un modelo de pronóstico de series temporales idealmente debería ser un ruido blanco.
+
+Algunas herramientas que puede utilizar para verificar si su serie temporal es ruido blanco son:
+
+* Crea un gráfico de líneas. Verifique las características brutas como una media cambiante, una varianza o una relación obvia entre las variables rezagadas.
+* Calcular estadísticas de resumen. Compruebe la media y la varianza de toda la serie frente a la media y la varianza de bloques de valores contiguos significativos en la serie (por ejemplo, días, meses o años).
+* Cree un gráfico de autocorrelación. Compruebe la correlación bruta entre las variables rezagadas.
+
 ## Randon Walk
 
 El randon walk o camino al azar es un proceso estocástico $X_t$, donde la primera diferencia de este proceso estocástico es un <a href="https://support.numxl.com/hc/es/articles/115001099806--C%C3%B3mo-comprobar-cu%C3%A1ndo-una-serie-de-tiempo-dada-es-s%C3%B3lo-ruido-blanco-">white noise</a>, esto es $\triangledown X_t = \varepsilon_t$ .
